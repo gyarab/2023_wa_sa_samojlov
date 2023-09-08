@@ -32,7 +32,7 @@
     
     ![7acdd1fbae52358a261eb57c7bd2144c](https://github.com/gyarab/2023_wa_sz_samojlov/assets/94285852/0ee9517c-ab8a-49a8-9edc-0ddc3d163831)
 
-## Tabulka dalších významných památek
+## Tabulka dalších významných památek v Římě
 
 | Název památky | Rok výstavby |
 | -------- | ------- |
