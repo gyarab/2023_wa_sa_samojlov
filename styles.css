@@ -1,0 +1,26 @@
+.fotka{
+
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    text-align: center;
+}
+
+.fotka img{
+    width: 50%;
+    max-width: 1000px;
+    cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto;
+}
+
+.tabulka{
+
+    padding: 2px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td, tr{
+
+    border: 1px solid black;
+    padding: 10px;
+}
