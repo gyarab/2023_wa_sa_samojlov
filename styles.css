@@ -12,15 +12,34 @@
 
 .tabulka{
 
-    padding: 2px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-td, tr{
+th, td, tr{
 
     border: 1px solid black;
     padding: 10px;
+}
+
+p{
+    
+    line-height: 175%;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+}
+
+.cervene{
+    color: #ff0000;
+}
+
+p.male{
+
+    color: rgb(255, 0, 255);
+    font-size: 75%;
 }
