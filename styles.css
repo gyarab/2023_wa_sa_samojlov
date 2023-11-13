@@ -29,9 +29,15 @@ p{
     line-height: 175%;
 }
 
-h1 {
-    position: relative;
-    text-align: center;
+.zelene{
+    font-size: medium;
+    color: #1aaf33
+}
+
+
+.fialove{
+    font-size: large;
+    color: #a200ff
 }
 
 .cervene{
@@ -42,4 +48,46 @@ p.male{
 
     color: rgb(255, 0, 255);
     font-size: 75%;
+}
+
+.odkazy{
+
+    position: relative;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    left: 50%;
+    width: 9rem;
+    border: 2px solid black;
+    margin-top: 50px;
+}
+
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+  }
+
+.odkazy ul li{
+
+    margin-bottom: 5px;
+    list-style-type: "🔥";
+    padding-top: 5px;
+    &.zvetsit {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+    }
+}
+.odkazy ul li a{
+
+    color: black;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 25px;
+    animation: none;
+}
+
+.odkazy ul li a:hover{
+    animation: color-change 1s infinite;
 }
