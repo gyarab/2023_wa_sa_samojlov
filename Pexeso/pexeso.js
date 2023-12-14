@@ -22,34 +22,80 @@ var images = [
   "img/chameleon.jpg",
 ];
 
+for (let cislo = 0; cislo < images.length; cislo++) {
+  images.id = images[cislo];
+}
+
 // zdvojnasobeni fotek
 var vsechno = images.concat(images);
 
-var shuffledArray = vsechno.sort( () => .5 - Math.random() );;
+var shuffledArray = vsechno.sort(() => 0.5 - Math.random());
 
 for (let x = 0; x < shuffledArray.length; x++) {
-    var objekt = document.createElement("div");
-    objekt.style.background = 'black';
-    objekt.style.borderRadius = '25%';
-    document.getElementById("obrazky").appendChild(objekt);
+  var objekt = document.createElement("div");
+  objekt.style.background = "black";
+  objekt.style.borderRadius = "15%";
+  document.getElementById("obrazky").appendChild(objekt);
 
-    var img = document.createElement("img");
-    img.src = shuffledArray[x];
-    img.style.pointerEvents = 'none';
-    img.style.visibility = 'hidden';
-    objekt.appendChild(img);
+  var img = document.createElement("img");
+  img.src = shuffledArray[x];
+  img.style.visibility = "hidden";
 
-    
-    (function(imgElement) {
-        objekt.addEventListener('click', function() {
-            
-            if (imgElement.style.visibility === 'visible') {
+  var kartaID = objekt.id;
 
-                imgElement.style.visibility = 'hidden';
-            } else {
-                imgElement.style.visibility = 'visible';
+  objekt.id = shuffledArray[x];
+  objekt.appendChild(img);
+
+  var array = [];
+
+  (function (imgElement) {
+
+    objekt.addEventListener("click", function () {
+
+      if (imgElement.style.visibility === "visible") {
+        imgElement.style.visibility = "hidden";
+      } else {
+        imgElement.style.visibility = "visible";
+      }
+
+      kartaID = shuffledArray[x];
+      array.push(kartaID);
+
+      if (array.length == 2) {
+        if (array[0] == array[1]) {
+          console.log("HOT");
+
+          array.forEach(function (id) {
+            var element = document.getElementById(id).remove();
+            if (element) {
+              element.remove();
             }
-        });
-    })(img);
+          });
+        } else {
+          var divAll = document.querySelectorAll("div");
+          var imagesAll = document.querySelectorAll("img");
 
+          divAll.forEach(function (div) {
+            div.style.pointerEvents = "none";
+          });
+
+          imagesAll.forEach(function (img) {
+            
+            setTimeout(() => {
+              img.style.visibility = "hidden";
+          
+              divAll.forEach(function (div) {
+                div.style.pointerEvents = "auto";
+              });
+            }, 2000);
+            
+          });
+          
+        }
+        array = [];
+      }
+
+      console.log(array);
+    });
+  })(img);
 }
