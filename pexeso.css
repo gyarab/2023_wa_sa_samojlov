@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+}
+
+.rozvrzeni {
+    margin-left: 22.5%;
+}
+
+.karty {
+
+    position: relative;
+    display: grid;
+    width: 250px;
+    height: 250px;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(2, 250px);
+    gap: 10px;
+
+    /*
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-rows: 250px 250px; 
+    column-gap: 10px;
+    row-gap: 10px;
+    */
+}
+
+.zvire {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nastavi obrazek na rozmery tridy */
+.karty img {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 15%;
+}
