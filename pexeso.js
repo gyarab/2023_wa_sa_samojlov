@@ -15,6 +15,8 @@ setTimeout(odpocet, 1000);
 
 el.innerHTML = "Nová hra";*/
 
+var pocet = 0;
+
 var images = [
   "img/kocka.jpg",
   "img/pes.jpeg",
@@ -32,6 +34,7 @@ var vsechno = images.concat(images);
 var shuffledArray = vsechno.sort(() => 0.5 - Math.random());
 
 for (let x = 0; x < shuffledArray.length; x++) {
+
   var objekt = document.createElement("div");
   objekt.style.background = "black";
   objekt.style.borderRadius = "15%";
@@ -77,12 +80,26 @@ for (let x = 0; x < shuffledArray.length; x++) {
       });
 
       */
-      
 
+      console.log(pocet);
+      
       if (array.length == 2) {
 
         if (array[0] == array[1]) {
-          
+
+          pocet++;
+
+          if(pocet == 4){
+
+            var win = document.createElement('div');
+            win.textContent = 'You WIN!';
+            win.style.textAlign= "center";
+            win.style.fontSize="50px";
+            win.style.fontWeight="bold";
+            win.style.color="#11f005";
+            
+            document.getElementById("body").appendChild(win);
+          }
 
           array.forEach(function (id) {
             var elements = document.querySelectorAll('[id="' + id + '"]');
@@ -96,8 +113,8 @@ for (let x = 0; x < shuffledArray.length; x++) {
               }, 2000);
             });
           });
+
         } else {
-         
 
           var divAll = document.querySelectorAll("div");
           var imagesAll = document.querySelectorAll("img");
